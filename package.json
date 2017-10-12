@@ -4,21 +4,20 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec 'nf start'",
-    "db:create-db": "db-migrate db:create filmsonfreeview",
-    "db:drop-db": "db-migrate db:drop filmsonfreeview",
-    "db:create-migration": "bash -c 'db-migrate create $0 --sql-file'",
-    "db:up": "db-migrate up",
-    "db:down": "db-migrate down",
+    "start": "nodemon --exec 'nf start web'",
+    "import": "nodemon --exec 'nf start importer'",
+    "seed": "nf start seeder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "db-migrate": "^0.10.0-beta.24",
-    "db-migrate-pg": "^0.2.5",
+    "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.2",
-    "postgraphql": "^3.5.0"
+    "pg": "^7.3.0",
+    "postgraphql": "^3.5.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "eslint": "^4.8.0",
