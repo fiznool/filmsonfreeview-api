@@ -3,10 +3,11 @@ create table filmsonfreeview.${film_table_name} (
   name        text not null,
   year        int,
   synopsis    text,
+  channel     text not null,
   imdb_id     text,
   imdb_rating text,
   tmdb_id     text,
-  tmdb_rating text
+  tmdb_rating int
 );
 
 comment on table filmsonfreeview.${film_table_name} is 'A film shown on a Freeview channel.';
@@ -20,14 +21,14 @@ comment on column filmsonfreeview.${film_table_name}.tmdb_id is 'The ID of TheMo
 comment on column filmsonfreeview.${film_table_name}.tmdb_rating is 'TheMovieDB rating of the film.';
 
 
-create table filmsonfreeview.${channel_table_name} (
-  id    serial primary key,
-  name  text not null
-);
+-- create table filmsonfreeview.${channel_table_name} (
+--   id    serial primary key,
+--   name  text not null
+-- );
 
-comment on table filmsonfreeview.${channel_table_name} is 'A channel which is showing a Freeview film.';
-comment on column filmsonfreeview.${channel_table_name}.id is 'The primary unique identifier for the channel.';
-comment on column filmsonfreeview.${channel_table_name}.name is 'The name of the channel.';
+-- comment on table filmsonfreeview.${channel_table_name} is 'A channel which is showing a Freeview film.';
+-- comment on column filmsonfreeview.${channel_table_name}.id is 'The primary unique identifier for the channel.';
+-- comment on column filmsonfreeview.${channel_table_name}.name is 'The name of the channel.';
 
 
 create table filmsonfreeview.${showtime_table_name} (
