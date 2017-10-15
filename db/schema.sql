@@ -32,10 +32,10 @@ comment on column filmsonfreeview.${channel_table_name}.name is 'The name of the
 
 create table filmsonfreeview.${showtime_table_name} (
   id serial primary key,
-  starts_at timestamp not null,
-  ends_at timestamp not null,
-  film_id integer not null references filmsonfreeview.${film_table_name}(id),
-  channel_id integer not null references filmsonfreeview.${channel_table_name}(id)
+  starts_at text not null,
+  ends_at text not null,
+  film_id integer not null references filmsonfreeview.${film_table_name}(id)
+  -- channel_id integer not null references filmsonfreeview.${channel_table_name}(id)
 );
 
 comment on table filmsonfreeview.${showtime_table_name} is 'The time that a film is being shown on a certain channel on Freeview.';
@@ -43,4 +43,4 @@ comment on column filmsonfreeview.${showtime_table_name}.id is 'The primary uniq
 comment on column filmsonfreeview.${showtime_table_name}.starts_at is 'The start time for the showtime.';
 comment on column filmsonfreeview.${showtime_table_name}.ends_at is 'The end time for the showtime.';
 comment on column filmsonfreeview.${showtime_table_name}.film_id is 'The ID of the film being shown.';
-comment on column filmsonfreeview.${showtime_table_name}.channel_id is 'The ID of the channel that the film is being shown on.';
+-- comment on column filmsonfreeview.${showtime_table_name}.channel_id is 'The ID of the channel that the film is being shown on.';
