@@ -3,7 +3,6 @@ create table filmsonfreeview.${film_table_name} (
   name        text not null,
   year        int,
   synopsis    text,
-  channel     text not null,
   imdb_id     text,
   imdb_rating text,
   tmdb_id     text,
@@ -32,10 +31,11 @@ comment on column filmsonfreeview.${film_table_name}.tmdb_rating is 'TheMovieDB 
 
 
 create table filmsonfreeview.${showtime_table_name} (
-  id serial primary key,
+  id        serial primary key,
   starts_at timestamp with time zone not null,
-  ends_at timestamp with time zone not null,
-  film_id integer not null references filmsonfreeview.${film_table_name}(id)
+  ends_at   timestamp with time zone not null,
+  film_id   integer not null references filmsonfreeview.${film_table_name}(id),
+  channel   text not null
   -- channel_id integer not null references filmsonfreeview.${channel_table_name}(id)
 );
 
@@ -44,4 +44,5 @@ comment on column filmsonfreeview.${showtime_table_name}.id is 'The primary uniq
 comment on column filmsonfreeview.${showtime_table_name}.starts_at is 'The start time for the showtime.';
 comment on column filmsonfreeview.${showtime_table_name}.ends_at is 'The end time for the showtime.';
 comment on column filmsonfreeview.${showtime_table_name}.film_id is 'The ID of the film being shown.';
+comment on column filmsonfreeview.${showtime_table_name}.channel is 'The channel that the film is being shown on.';
 -- comment on column filmsonfreeview.${showtime_table_name}.channel_id is 'The ID of the channel that the film is being shown on.';
