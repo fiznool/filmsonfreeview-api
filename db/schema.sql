@@ -33,8 +33,8 @@ comment on column filmsonfreeview.${film_table_name}.tmdb_rating is 'TheMovieDB 
 
 create table filmsonfreeview.${showtime_table_name} (
   id serial primary key,
-  starts_at text not null,
-  ends_at text not null,
+  starts_at timestamp with time zone not null,
+  ends_at timestamp with time zone not null,
   film_id integer not null references filmsonfreeview.${film_table_name}(id)
   -- channel_id integer not null references filmsonfreeview.${channel_table_name}(id)
 );
