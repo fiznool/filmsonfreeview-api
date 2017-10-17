@@ -24,5 +24,8 @@
     "eslint": "^4.8.0",
     "foreman": "^2.0.0",
     "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "8.x"
   }
 }
