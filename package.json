@@ -7,7 +7,8 @@
     "start": "nodemon --exec 'nf start web'",
     "import": "nodemon --exec 'nf start importer'",
     "seed": "nf start seeder",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "node lib/importer.js"
   },
   "author": "",
   "license": "MIT",
